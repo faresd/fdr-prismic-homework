@@ -1,0 +1,8 @@
+section.page-introduction.content-section.content-centered
+    div
+        strong.title-of-section
+            != PrismicDOM.RichText.asHtml(slice.primary.title_of_section, ctx.linkResolver)
+    div.short-description.medium-offset-3.medium-6
+        != PrismicDOM.RichText.asHtml(slice.primary.short_description, ctx.linkResolver)
+        != PrismicDOM.RichText.asHtml(slice.primary.hint, ctx.linkResolver)
+    img(src=slice.primary.image.url)

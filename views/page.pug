@@ -1,0 +1,19 @@
+extends ./layout.pug
+
+block prepend body 
+  body(data-wio-id=pageContent.id)
+
+  include partials/header.pug
+
+  // Content Section
+  div.container
+
+    //- Display the slices
+    for slice in pageContent.data.page_content
+      case slice.slice_type
+        when 'page_introduction'
+          include partials/page-introduction.pug
+        when 'image_highlight'
+          include partials/image-highlight.pug
+        when 'featured_items'
+          include partials/featured-items.pug

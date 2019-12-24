@@ -1,0 +1,9 @@
+section.highlight.pv8
+  .highlight-left
+    != PrismicDOM.RichText.asHtml(slice.primary.title, ctx.linkResolver)
+    != PrismicDOM.RichText.asHtml(slice.primary.headline, ctx.linkResolver)
+    != PrismicDOM.RichText.asHtml(slice.primary.summary, ctx.linkResolver)
+
+  .highlight-right
+    img(src=slice.primary.featured_image.url)
+

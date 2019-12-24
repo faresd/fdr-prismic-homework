@@ -1,0 +1,15 @@
+section.featured-items-container.content-section.content-centered.pv8
+    div.title_of_section
+        != PrismicDOM.RichText.asHtml(slice.primary.title_of_section, ctx.linkResolver)
+        != PrismicDOM.RichText.asHtml(slice.primary.hint, ctx.linkResolver)
+
+    div.row-centered-aired.featured-items.flex-container
+        //- Loop through the featured items
+        each featuredItem in slice.items
+            div.item-container.col-3.center
+                div.featured-item
+                    img.round-image(src=featuredItem.illustration.url)
+                    h3.featured-item-title
+                        != PrismicDOM.RichText.asText(featuredItem.title)
+                    p.featured-item-summary
+                        != PrismicDOM.RichText.asHtml(featuredItem.summary, ctx.linkResolver)
