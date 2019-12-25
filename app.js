@@ -27,9 +27,9 @@ app.listen(PORT, () => {
   console.log(`Server running at: http://localhost:${PORT}/`);
 });
 
-/*
- * Initialize prismic context and api
- */
+
+// Initialize prismic context and api
+
 app.use((req, res, next) => {
 
     Prismic.getApi(PrismicConfig.apiEndpoint)
@@ -57,7 +57,7 @@ app.route('*').get((req, res, next) => {
         });
 });
 
-/* GET home page. */
+// GET home page.
 app.get('/', function(req, res, next) {
     // res.render('homepage', { title: 'Express' });
     req.prismic.api.getSingle("homepage")
